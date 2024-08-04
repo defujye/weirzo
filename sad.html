@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Rain</title>
     <meta property="og:title" content="Screenshot">
     <meta property="og:site_name" content="Lightshot">
@@ -16,51 +16,45 @@
     <meta name="twitter:description" content="Captured with Lightshot">
     <meta name="twitter:image:src" content="lightshot.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
     <style type="text/css">
-        p {
-            margin: 0;
-        }
-
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
-            padding-bottom: 60px; /* Đảm bảo video không bị che khuất */
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
 
-        .overlay,
-        .scare {
+        .overlay, .scare {
             position: fixed;
             top: 0;
             left: 0;
             height: 100vh;
             width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .overlay {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f5f6fa;
-            padding: 24px;
+            background-color: rgba(245, 246, 250, 0.9);
             z-index: 2;
+            padding: 16px;
             overflow: auto;
         }
 
         .overlay-body {
-            max-width: 512px;
+            max-width: 90%;
+            max-height: 90vh;
             text-align: center;
-            font-family: "Inter", sans-serif;
-            padding: 16px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-height: 90vh;
+            padding: 16px;
             overflow-y: auto;
         }
 
@@ -84,7 +78,7 @@
         }
 
         .overlay-title {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 900;
             color: black;
             margin-bottom: 16px;
@@ -94,11 +88,11 @@
             display: inline-flex;
             align-items: center;
             height: 40px;
-            padding: 0 24px;
-            font-size: 16px;
+            padding: 0 16px;
+            font-size: 1rem;
             font-weight: 500;
             border-radius: 4px;
-            margin: 4px;
+            margin: 8px;
             cursor: pointer;
             white-space: nowrap;
         }
@@ -114,7 +108,7 @@
         }
 
         .overlay-description {
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 400;
             color: rgba(0, 0, 0, 0.5);
             margin-bottom: 16px;
@@ -123,7 +117,7 @@
         .overlay-link {
             display: inline-block;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 500;
             color: rgb(132, 94, 194);
             margin-top: 16px;
@@ -141,24 +135,19 @@
         }
 
         @media (max-width: 600px) {
-            .overlay-body {
-                width: 90%;
-                padding: 16px;
-            }
-
             .overlay-title {
-                font-size: 20px;
+                font-size: 1.25rem;
             }
 
             .overlay-description {
-                font-size: 14px;
+                font-size: 0.875rem;
             }
 
             .overlay-button {
-                font-size: 14px;
-                padding: 0 16px;
-                margin: 8px 0;
-                width: calc(100% - 32px);
+                font-size: 0.875rem;
+                padding: 0 12px;
+                margin: 4px 0;
+                width: calc(100% - 24px);
                 justify-content: center;
             }
         }
@@ -166,38 +155,30 @@
 </head>
 
 <body>
-
-    <br>
     <div id="overlay" class="overlay">
         <div class="overlay-body">
             <script type="text/javascript">
                 atOptions = {
-                    'key' : '771a68fd14a7396ff4d9b3dc8c973f08',
-                    'format' : 'iframe',
-                    'height' : 50,
-                    'width' : 320,
-                    'params' : {}
+                    'key': '771a68fd14a7396ff4d9b3dc8c973f08',
+                    'format': 'iframe',
+                    'height': 50,
+                    'width': 320,
+                    'params': {}
                 };
             </script>
             <script type="text/javascript" src="//www.topcreativeformat.com/771a68fd14a7396ff4d9b3dc8c973f08/invoke.js"></script>
             <p class="overlay-title">NỘI DUNG NÀY CÓ THỂ KHÔNG PHÙ HỢP</p>
             <p>THIS CONTENT MAY BE INAPPROPRIATE</p>
             <br>
-            <br>
-            <p class="overlay-description">bạn nên lưu ý rằng nội dung này không dành cho người già, trẻ nhỏ , dưới 18 tuổi , tâm trạng đang không tốt , yếu tim , có bệnh nền , tâm lý không ổn định !
-            </p>
+            <p class="overlay-description">bạn nên lưu ý rằng nội dung này không dành cho người già, trẻ nhỏ , dưới 18 tuổi , tâm trạng đang không tốt , yếu tim , có bệnh nền , tâm lý không ổn định !</p>
             <p class="overlay-description">You should note that this content is not for the elderly, children, under 18 years old, people in bad mood, weak heart, have underlying diseases, or unstable mentality!</p>
             <div class="overlay-buttons-wrapper">
                 <div id="accept-button" class="overlay-button">Vẫn mở ( Accept )</div>
                 <div id="decline-button" class="overlay-button">Thôi bỏ đi ( Decline )</div>
             </div>
-            <br>
-            <br>
             <hr>
-            <p style="color:red">Chia sẻ website này tới bạn bè của bạn : https://vietnamvd.github.io/sad.html</p>
-            <br>
-            <p style="color:red">Share this website with your friends : https://vietnamvd.github.io/sad.html</p>
-            <br>
+            <p style="color:red">Chia sẻ website này tới bạn bè của bạn : <a href="https://vietnamvd.github.io/sad.html" style="color:red;">https://vietnamvd.github.io/sad.html</a></p>
+            <p style="color:red">Share this website with your friends : <a href="https://vietnamvd.github.io/sad.html" style="color:red;">https://vietnamvd.github.io/sad.html</a></p>
             <hr>
             <p>Báo cáo trang web này ? ( Report this site )</p>
             <a href="https://vietnamvd.github.io/report.html" target="_blank" class="overlay-link">Report</a>
@@ -244,15 +225,12 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GN35H5C0X9"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'G-GN35H5C0X9');
     </script>
-
 </body>
 
 </html>
