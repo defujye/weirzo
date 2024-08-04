@@ -22,7 +22,7 @@
             padding: 0;
             height: 100%;
             font-family: "Inter", sans-serif;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: auto; /* Allow scrolling */
         }
 
         *, *::before, *::after {
@@ -40,6 +40,7 @@
             justify-content: center;
             background-color: rgba(245, 246, 250, 0.9);
             z-index: 2;
+            overflow: auto; /* Ensure scrolling within overlay if content overflows */
         }
 
         .scare {
@@ -161,6 +162,10 @@
 <body>
     <div id="overlay" class="overlay">
         <div class="overlay-body">
+            <br>
+            <br>
+            <br>
+            <br>
             <script type="text/javascript">
                 atOptions = {
                     'key': '771a68fd14a7396ff4d9b3dc8c973f08',
