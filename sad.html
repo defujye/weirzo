@@ -28,6 +28,11 @@
             box-sizing: border-box;
         }
 
+        body {
+            margin: 0;
+            padding-bottom: 60px; /* Đảm bảo video không bị che khuất */
+        }
+
         .overlay,
         .scare {
             position: fixed;
@@ -71,6 +76,7 @@
             height: 100%;
             width: 100%;
             object-fit: cover;
+            z-index: 0;
         }
 
         video#video::-webkit-media-controls-enclosure {
@@ -160,19 +166,20 @@
 </head>
 
 <body>
-   <script type="text/javascript">
-	atOptions = {
-		'key' : '7022ff8c6b69cbe8f708d7873c70b851',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.topcreativeformat.com/7022ff8c6b69cbe8f708d7873c70b851/invoke.js"></script>
+
     <br>
     <div id="overlay" class="overlay">
         <div class="overlay-body">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '771a68fd14a7396ff4d9b3dc8c973f08',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/771a68fd14a7396ff4d9b3dc8c973f08/invoke.js"></script>
             <p class="overlay-title">NỘI DUNG NÀY CÓ THỂ KHÔNG PHÙ HỢP</p>
             <p>THIS CONTENT MAY BE INAPPROPRIATE</p>
             <br>
@@ -193,7 +200,6 @@
             <br>
             <hr>
             <p>Báo cáo trang web này ? ( Report this site )</p>
-            <br>
             <a href="https://vietnamvd.github.io/report.html" target="_blank" class="overlay-link">Report</a>
         </div>
     </div>
