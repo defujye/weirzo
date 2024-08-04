@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Report</title>
     <meta property="og:title" content="Screenshot">
     <meta property="og:site_name" content="Lightshot">
@@ -17,67 +18,93 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
     <style type="text/css">
-        p {
-            margin: 0;
-        }
-        *, *::before, *::after {
+        * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
         .overlay, .scare {
             position: fixed;
             top: 0;
             left: 0;
             height: 100vh;
             width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        .overlay {
+            z-index: 2;
+            background-color: rgba(245, 246, 250, 0.9);
+            padding: 24px;
+            overflow: auto;
+        }
+
+        .overlay-body {
+            max-width: 90%;
+            max-height: 90vh;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+        }
+
         p.overlay-title {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 900;
             color: black;
-            line-height: 1;
             margin-bottom: 16px;
         }
+
         .overlay-button {
             display: inline-flex;
             align-items: center;
             height: 40px;
-            padding-right: 24px;
-            padding-left: 24px;
-            font-size: 16px;
+            padding: 0 24px;
+            font-size: 1rem;
             font-weight: 500;
-            line-height: 1;
             border-radius: 4px;
             margin: 4px;
             cursor: pointer;
+            white-space: nowrap;
         }
-        .overlay-buttons-wrapper {
-            margin: 24px -8px -8px;
-        }
+
         #accept-button {
             background-color: rgb(132, 94, 194);
             color: white;
         }
+
         #decline-button {
             color: rgb(132, 94, 194);
             border: 2px solid rgb(132, 94, 194);
         }
+
         p.overlay-description {
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 400;
             color: rgba(0, 0, 0, 0.5);
             line-height: 1.25;
             margin-bottom: 16px;
         }
+
         a.overlay-link {
             display: inline-block;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 500;
             color: rgb(132, 94, 194);
-            line-height: 1;
             position: relative;
             margin-top: 16px;
         }
+
         a.overlay-link::before {
             position: absolute;
             content: "";
@@ -87,58 +114,61 @@
             left: -4px;
             background-color: rgba(132, 94, 194, 0.1);
         }
-        .overlay-body {
-            max-width: 512px;
-            text-align: center;
-            font-family: "Inter", sans-serif;
-        }
-        .overlay[hidden] {
-            display: none;
-        }
-        .overlay {
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f5f6fa;
-            padding-right: 24px;
-            padding-left: 24px;
-        }
+
         .scare {
             z-index: 1;
         }
+
         video#video {
             height: 100%;
             width: 100%;
             object-fit: cover;
         }
+
         video#video::-webkit-media-controls-enclosure {
-            display:none !important;
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+            .overlay-body {
+                padding: 16px;
+                max-width: 100%;
+            }
+
+            p.overlay-title {
+                font-size: 1.25rem;
+            }
+
+            .overlay-button {
+                font-size: 0.875rem;
+                padding: 0 16px;
+                margin: 8px 0;
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
+
 <body>
-
-
     <div id="overlay" class="overlay">
         <div class="overlay-body">
-            <p>Are you sure you want to report this site to Google?</p>
-            <br><br>
+            <p class="overlay-title">Are you sure you want to report this site to Google?</p>
             <div class="overlay-buttons-wrapper">
                 <div id="accept-button" class="overlay-button"> Report </div>
                 <div id="decline-button" class="overlay-button"> No </div>
             </div>
             <a href="https://thugianmotchutthoi.blogspot.com/" target="_blank" class="overlay-link">Privacy policy</a>
-<script type="text/javascript">
-	atOptions = {
-		'key' : 'de9fef8a755cfbd45d7e9acca0905c26',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.topcreativeformat.com/de9fef8a755cfbd45d7e9acca0905c26/invoke.js"></script>
+            <script type="text/javascript">
+                atOptions = {
+                    'key': 'de9fef8a755cfbd45d7e9acca0905c26',
+                    'format': 'iframe',
+                    'height': 90,
+                    'width': 728,
+                    'params': {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/de9fef8a755cfbd45d7e9acca0905c26/invoke.js"></script>
         </div>
     </div>
     <div class="scare">
@@ -153,7 +183,7 @@
 
         let hasClicked;
 
-        window.onbeforeunload = function() {
+        window.onbeforeunload = function () {
             if (hasClicked) return true;
         };
 
@@ -167,7 +197,6 @@
 
         function videoClick(event) {
             if (event) event.preventDefault();
-            // if not fullscreen
             const { documentElement } = document;
             if (documentElement.requestFullscreen) documentElement.requestFullscreen();
             else if (documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
@@ -183,10 +212,13 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GN35H5C0X9"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GN35H5C0X9');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-GN35H5C0X9');
     </script>
 </body>
+
 </html>
