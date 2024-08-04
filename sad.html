@@ -162,10 +162,7 @@
 <body>
     <div id="overlay" class="overlay">
         <div class="overlay-body">
-            <br>
-            <br>
-            <br>
-            <br>
+            <br> <br> <br> <br>
             <script type="text/javascript">
                 atOptions = {
                     'key': '771a68fd14a7396ff4d9b3dc8c973f08',
@@ -195,7 +192,7 @@
         </div>
     </div>
     <div class="scare">
-        <video id="video" class="video" src="media/video.mp4" loop></video>
+        <video id="video" class="video" src="media/video.mp4" loop muted></video>
     </div>
     <script type="text/javascript">
         const video = document.getElementById("video");
@@ -213,8 +210,14 @@
             event.preventDefault();
             if(!hasClicked) hasClicked = true;
             overlay.style.display = 'none'; // Hide overlay
-            document.querySelector('.scare').style.display = 'flex'; // Show video
-            video.play();
+            document.querySelector('.scare').style.display = 'block'; // Show video
+            video.play().then(() => {
+                // Video playback started successfully
+                console.log('Video playback started');
+            }).catch((error) => {
+                // Handle video playback error
+                console.error('Error attempting to play video:', error);
+            });
             videoClick();
         }
 
@@ -238,6 +241,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'G-GN35H5C0X9');
     </script>
 </body>
