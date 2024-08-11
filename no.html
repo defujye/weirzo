@@ -1,237 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAD</title>
-    <meta property="og:title" content="Screenshot">
-    <meta property="og:site_name" content="Lightshot">
-    <meta property="og:image" content="images/lightshot.png">
-    <meta property="og:description" content="Captured with Lightshot">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="photo">
-    <meta name="twitter:title" content="Screenshot">
-    <meta name="twitter:site" content="@light_shot">
-    <meta name="twitter:description" content="Captured with Lightshot">
-    <meta name="twitter:image:src" content="lightshot.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
-    <style type="text/css">
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: "Inter", sans-serif;
-            overflow: auto; /* Allow scrolling */
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(245, 246, 250, 0.9);
-            z-index: 2;
-            overflow: auto; /* Ensure scrolling within overlay if content overflows */
-        }
-
-        .scare {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100vw;
-            z-index: 1;
-            display: none; /* Hide video by default */
-        }
-
-        .overlay-body {
-            text-align: center;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-
-        p.overlay-title {
-            font-size: 2rem;
-            font-weight: 900;
-            color: black;
-            line-height: 1.2;
-            margin: 0 0 16px 0;
-        }
-
-        p.overlay-description {
-            font-size: 1rem;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 0.7);
-            line-height: 1.5;
-            margin: 0 0 16px 0;
-        }
-
-        .overlay-button {
-            display: inline-flex;
-            align-items: center;
-            height: 40px;
-            padding: 0 24px;
-            font-size: 1rem;
-            font-weight: 500;
-            border-radius: 4px;
-            margin: 4px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        #accept-button {
-            background-color: rgb(132, 94, 194);
-            color: white;
-        }
-
-        #decline-button {
-            color: rgb(132, 94, 194);
-            border: 2px solid rgb(132, 94, 194);
-        }
-
-        .overlay-buttons-wrapper {
-            margin: 24px 0;
-        }
-
-        a.overlay-link {
-            display: inline-block;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            color: rgb(132, 94, 194);
-            position: relative;
-            margin-top: 16px;
-        }
-
-        a.overlay-link::before {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            bottom: -4px;
-            left: -4px;
-            background-color: rgba(132, 94, 194, 0.1);
-            z-index: -1;
-        }
-
-        video#video {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        video#video::-webkit-media-controls-enclosure {
-            display: none !important;
-        }
-
-        .report-section {
-            margin: 24px 0;
-            font-size: 1rem;
-            color: black;
-        }
-
-        .report-section a {
-            color: rgb(132, 94, 194);
-            font-weight: 500;
-        }
-
-        @media (max-width: 600px) {
-            p.overlay-title {
-                font-size: 1.5rem;
-            }
-
-            p.overlay-description {
-                font-size: 0.875rem;
-            }
-
-            .overlay-button {
-                font-size: 0.875rem;
-            }
-        }
-    </style>
+    <title>Chuyển hướng</title>
 </head>
 <body>
-    <div id="overlay" class="overlay">
-        <div class="overlay-body">
-            <br> <br> <br> <script type="text/javascript">
-	atOptions = {
-		'key' : '10d207c63181e6ce76f6aa4958615425',
-		'format' : 'iframe',
-		'height' : 300,
-		'width' : 160,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.topcreativeformat.com/10d207c63181e6ce76f6aa4958615425/invoke.js"></script>
-            <p>THIS CONTENT MAY BE INAPPROPRIATE</p>
-            <p>You should note that this content is not for the elderly, children, under 18 years old, people in bad mood, weak heart, have underlying diseases, or unstable mentality!</p>
-            <div class="overlay-buttons-wrapper">
-                <div id="accept-button" class="overlay-button">Accept </div>
-                <div id="decline-button" class="overlay-button">Decline </div>
-            </div>
-            <hr>
-            <div class="report-section">
-         <a href="https://www.highratecpm.com/vbtuhk2vs?key=fde0e107159b3051e5c8e126e7f4e796">Report this site </a>
-            </div>
-            <hr>
-            <p style="color:red">Share this website with your friends  <a href="https://vietnamvd.github.io/sad.html" style="color:red;">https://vietnamvd.github.io/sad.html</a></p>
-        </div>
-    </div>
-<p>------------------------------------------</p>
+    <button id="nextPageBtn">Trang tiếp theo</button>
+    <button id="openInGoogleBtn">Mở với Google</button>
 
-	
-    <h3>Vd đáng xem nhất lúc này!</h3>
-    <a href="https://dilink.net/notes/bEIjj8B" class="button" id="link1">Truy cập ngay</a>
-
-    <hr>
-    <h3>Khuyến khích xem khi đang ở 1 mình nha!</h3>
-    <a href="https://dilink.net/FWbutyMul" class="button" id="link2">Truy cập ngay</a>
-    <br> <br>
-    <i>Nếu lỗi thì các bạn tự copy và dán lên Google: https://dilink.net/FWbutyMul xóa dấu cách đi là được</i>
-    <hr>
-    <section>
-        <h3>Mình là ai?</h3>
-        <a href="https://vietnamvd.github.io/sad.html" class="button" id="link3">Mặt của mình ở đây</a>
-        <p>or : cungt213@gmail.com</p>
-        <p>Chỉ từ 5k vnd bạn có thể sở hữu ngay trang web ghi chú như mình thế này</p>
-        <p>Hoặc như này:</p>
-        <a href="https://thugianmotchutthoi.blogspot.com/" class="button" id="link4">Web này kinh dị lắm?</a>
-    </section>
-    <br>
-    <div class="report-section">
-        <p>Report this site?</p>
-        <a href="https://vietnamvd.github.io/sad.html" target="_blank" class="overlay-link">Báo cáo ngay (Report Now)</a>
-    </div>
-    <hr>
-
-    <div class="overlay" id="overlay">
-        <p>Bạn đang sử dụng TikTok. Vui lòng mở Google để xem nội dung này.</p>
-        <a href="https://www.google.com">Mở Google</a>
-    </div>
- <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var referrer = document.referrer.toLowerCase();
-            if (referrer.includes("tiktok.com")) {
-                var overlay = document.getElementById("overlay");
-                var buttons = document.querySelectorAll(".button");
-
-                buttons.forEach(function (button) {
-                    button.addEventListener("click", function (event) {
-                        event.preventDefault();
-                        overlay.style.display = "flex";
-                    });
-                });
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
+document.getElementById("nextPageBtn").addEventListener("click", function() {
+    // Chuyển hướng tới trang tiếp theo khi bấm nút đầu tiên
+    window.location.href = "https://vietnamvd.github.io/";
+});
+
+document.getElementById("openInGoogleBtn").addEventListener("click", function() {
+    // Hiển thị thông báo yêu cầu mở bằng Google Chrome
+    if (confirm("Trang này cần được mở bằng Google Chrome. Bạn có muốn mở không?")) {
+        // Tạo liên kết để mở trang web trong Google Chrome
+        const url = "https://dilink.net/FWbutyMul";
+        window.open("googlechrome://navigate?url=" + encodeURIComponent(url));
+    }
+});
+
