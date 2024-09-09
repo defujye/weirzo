@@ -15,7 +15,31 @@
     .container {
       margin-top: 20px;
     }
-	     footer {
+
+    .navbar-nav {
+      display: flex;
+      flex-wrap: nowrap; /* Prevent wrapping */
+      overflow-x: auto; /* Allow horizontal scrolling */
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar-nav li {
+      flex: 0 0 auto;
+      list-style: none;
+    }
+
+    .nav-link {
+      padding: 15px;
+    }
+
+    /* Header and Footer Styling */
+    header {
+      margin-bottom: 20px;
+    }
+    footer {
       background-color: #343a40;
       color: #fff;
       padding: 10px 0;
@@ -26,24 +50,36 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Make sure items stay in a single line on all devices */
+    @media (max-width: 767px) {
+      .navbar-nav {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Allow scrolling horizontally */
+      }
+      .nav-item {
+        flex: 0 0 auto; /* Keep items in a row */
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <header class="bg-primary text-white text-center py-3">
-    <h1>Vietnamvd</h1>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="https://vietnamvd.github.io">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Vietnamvd</h1>
+        <nav class="navbar navbar-expand navbar-dark bg-dark"> 
+          <ul class="navbar-nav">
+            <!-- First row -->
+            <li class="nav-item" >
               <a class="nav-link" href="https://vietnamvd.github.io">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://vietnamvd.github.io/blog.html">Blog</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://vietnamvd.github.io/about.html">About Us</a>
             </li>
+            <!-- Second row -->
             <li class="nav-item">
               <a class="nav-link" href="https://vietnamvd.github.io/contact.html">Contact</a>
             </li>
@@ -54,9 +90,8 @@
               <a class="nav-link" href="https://vietnamvd.github.io/terms-of-service.html">Terms of Service</a>
             </li>
           </ul>
-      </div>
-    </nav>
-  </header>
+        </nav>
+      </header>
 
   <div class="container">
     <h1>Privacy Policy</h1>
