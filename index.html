@@ -4,22 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-adsense-account" content="ca-pub-3031003174365564"> 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3031003174365564"
+  crossorigin="anonymous"></script>
   <title>Welcome to Vietnamvd</title>
-  <!-- Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       background-color: #f8f9fa;
     }
+    .navbar-nav {
+      display: flex;
+      flex-wrap: nowrap; /* Prevent wrapping */
+      overflow-x: auto; /* Allow horizontal scrolling */
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar-nav li {
+      flex: 0 0 auto;
+      list-style: none;
+    }
+
+    .nav-link {
+      padding: 15px;
+    }
+
+    /* Header and Footer Styling */
     header {
       margin-bottom: 20px;
-    }
-    .navbar-nav .nav-link {
-      font-size: 1.1rem;
-      margin-right: 20px;
-    }
-    .navbar-brand {
-      font-size: 1.5rem;
     }
     footer {
       background-color: #343a40;
@@ -73,39 +87,48 @@
         font-size: 1.25rem;
       }
     }
+
+    @media (max-width: 767px) {
+      .navbar-nav {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Allow scrolling horizontally */
+      }
+      .nav-item {
+        flex: 0 0 auto; /* Keep items in a row */
+        text-align: center;
+      }
+    }
   </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3031003174365564"
-  crossorigin="anonymous"></script>
-  
+
 </head>
 <body>
-  <header class="bg-primary text-white text-center py-3">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Vietnamvd</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="https://vietnamvd.github.io">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://vietnamvd.github.io/about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://vietnamvd.github.io/contact.html">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://vietnamvd.github.io/privacy-policy.html">Privacy Policy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://vietnamvd.github.io/terms-of-service.html">Terms of Service</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Vietnamvd</h1>
+        <nav class="navbar navbar-expand navbar-dark bg-dark"> 
+          <ul class="navbar-nav">
+            <!-- First row -->
+            <li class="nav-item" >
+              <a class="nav-link" href="https://vietnamvd.github.io">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://vietnamvd.github.io/blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://vietnamvd.github.io/about.html">About Us</a>
+            </li>
+            <!-- Second row -->
+            <li class="nav-item">
+              <a class="nav-link" href="https://vietnamvd.github.io/contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://vietnamvd.github.io/privacy-policy.html">Privacy Policy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://vietnamvd.github.io/terms-of-service.html">Terms of Service</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
   <div class="container my-4">
     <h2 class="text-center responsive-heading">Welcome to My Website</h2>
