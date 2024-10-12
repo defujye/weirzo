@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script>
+  // Khi người dùng nhấn nút "back" hoặc thoát trang
+  window.onbeforeunload = function() {
+    // Chuyển hướng sang trang khác
+    window.location.href = 'https://kinhquadi.blogspot.com/'; // Thay đổi URL này bằng trang bạn muốn điều hướng đến
+  };
+
+  // Xử lý nút quay lại trên trình duyệt
+  window.addEventListener('popstate', function() {
+    window.location.href = 'https://kinhquadi.blogspot.com/'; // Thay đổi URL này bằng trang bạn muốn điều hướng đến
+  });
+</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARE YOU SAD ?</title>
