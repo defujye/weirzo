@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script>
-  // Khi người dùng nhấn nút "back" hoặc thoát trang
-  window.onbeforeunload = function() {
-    // Chuyển hướng sang trang khác
-    window.location.href = 'https://kinhquadi.blogspot.com/'; // Thay đổi URL này bằng trang bạn muốn điều hướng đến
-  };
 
-  // Xử lý nút quay lại trên trình duyệt
-  window.addEventListener('popstate', function() {
-    window.location.href = 'https://kinhquadi.blogspot.com/'; // Thay đổi URL này bằng trang bạn muốn điều hướng đến
-  });
+	<script>
+  // Kiểm tra xem đã chuyển hướng trước đó chưa
+  if (!sessionStorage.getItem('hasRedirected')) {
+    // Đánh dấu rằng trang đã chuyển hướng
+    sessionStorage.setItem('hasRedirected', 'true');
+
+    // Khi người dùng thoát khỏi trang hoặc nhấn nút "back"
+    window.onbeforeunload = function() {
+      window.location.href = 'https://kinhquadi.blogspot.com/'; // Chuyển hướng đến trang đích
+    };
+
+    // Xử lý nút "back" trên trình duyệt
+    window.addEventListener('popstate', function() {
+      window.location.href = 'https://kinhquadi.blogspot.com/'; // Chuyển hướng đến trang đích khi người dùng nhấn "back"
+    });
+
+  } else {
+    // Nếu đã chuyển hướng, xóa cờ và tiếp tục cho phép chuyển hướng khác (nếu cần)
+    sessionStorage.removeItem('hasRedirected');
+    // Nếu trang quảng cáo tự chuyển hướng, bạn có thể thêm logic để chuyển hướng lần nữa về trang đích
+    setTimeout(function() {
+      window.location.href = 'https://kinhquadi.blogspot.com/'; // Điều hướng lại về trang đích
+    }, 1000); // Chờ 1 giây để xử lý chuyển hướng tự động của quảng cáo
+  }
 </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARE YOU SAD ?</title>
