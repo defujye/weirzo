@@ -2,7 +2,41 @@
 <html lang="en">
 <head>
 
-	
+	<script type="text/javascript">
+    // Hàm thêm trạng thái mới vào history và ngăn quay lại
+    function preventBack() {
+        window.history.pushState(null, null, window.location.href);
+    }
+
+    window.onload = function() {
+        // Khi trang được tải, thêm trạng thái vào history
+        preventBack();
+
+        // Chặn sự kiện "popstate" khi người dùng nhấn nút quay lại hoặc sử dụng cử chỉ
+        window.onpopstate = function(event) {
+            preventBack(); // Thêm lại trạng thái
+            alert('Bạn không thể quay lại trang trước!');
+
+            // Điều hướng lại trang hiện tại
+            window.location.href = window.location.href;
+        };
+    };
+
+    // Lắng nghe sự kiện "popstate" cho các trường hợp phím tắt hoặc cử chỉ quay lại
+    window.addEventListener('popstate', function(event) {
+        preventBack(); // Thêm lại trạng thái
+        alert('Bạn không thể quay lại trang trước!');
+
+        // Điều hướng lại trang hiện tại
+        window.location.href = window.location.href;
+    });
+
+    // Nếu người dùng cố gắng thoát khỏi trang bằng cách khác, luôn giữ họ ở trang hiện tại
+    window.onbeforeunload = function() {
+        preventBack(); // Đảm bảo trạng thái luôn được thêm lại khi thoát trang
+    };
+</script>
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
