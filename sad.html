@@ -16,7 +16,7 @@
         // Chặn sự kiện "popstate" khi người dùng nhấn nút quay lại hoặc sử dụng cử chỉ
         window.onpopstate = function(event) {
             preventBack(); // Thêm lại trạng thái
-            alert('You cannot go back to the previous page!');
+            alert('You cannot go back to the previous page :)) ');
 
             // Điều hướng lại trang hiện tại
             window.location.href = window.location.href;
@@ -26,7 +26,7 @@
     // Lắng nghe sự kiện "popstate" cho các trường hợp phím tắt hoặc cử chỉ quay lại
     window.addEventListener('popstate', function(event) {
         preventBack(); // Thêm lại trạng thái
-        alert('You cannot go back to the previous page!');
+        alert('You cannot go back to the previous page :)) ');
 
         // Điều hướng lại trang hiện tại
         window.location.href = window.location.href;
