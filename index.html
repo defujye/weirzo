@@ -1,115 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="Zmz6QzX0uuL03kyMTsgYgvQyWtN0p3byZR53E_HD118" />
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vietnamvd - Hù Ma Vui Nhộn - Meme, Video và Clip Hù Ma </title>
-     <!-- SEO Enhancement -->
-     <meta name="description" content="Hù ma vui nhộn, meme hù ma, trò chơi troll hù ma, video clip hù ma, và nhiều điều thú vị về thế giới hù ma!">
-     <meta name="keywords" content="hù ma, game hù ma, meme hù ma, video hù ma, clip hù ma, troll hù ma, web hù ma, link hù ma, trò chơi hù ma">
-     <meta name="author" content="Hù Ma Team">
-     <meta name="robots" content="index, follow">
-     <!-- Open Graph for better social sharing -->
-    <meta property="og:title" content="Vietnamvd - Khám Phá Những Điều Bất Ngờ!">
-    <meta property="og:description" content="Bạn không thể bỏ lỡ những video kịch tính và bí mật chỉ có tại trang web này.">
- 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3031003174365564"
-    crossorigin="anonymous"></script>
+    <title>Hello there buddy !</title>
+    <meta name="description" content="Funny ghost scares, ghost scare memes, ghost scare troll games, ghost scare video clips, and many interesting things about the world of ghost scares!">
+    <meta name="keywords" content="ghost scare, ghost scare game, ghost scare meme, ghost scare video, ghost scare clip, ghost scare troll, ghost scare website, ghost scare link, ghost scare game">
+    <meta name="author" content="x0x">
+    <meta property="og:title" content="Hello there buddy!">
+    <meta property="og:site_name" content="Lightshot">
+    <meta property="og:image" content="images/lightshot.png">
+    <meta property="og:description" content="Captured with Lightshot">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="photo">
+    <meta name="twitter:title" content="Screenshot">
+    <meta name="twitter:site" content="@light_shot">
+    <meta name="twitter:description" content="Captured with Lightshot">
+    <meta name="twitter:image:src" content="lightshot.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Inter", sans-serif;
+            background-color: gray;
+            color: black;
         }
-        .warning-container {
-            margin-top: 50px;
-            padding: 30px;
-            background-color: #fff3cd;
-            border: 1px solid #ffeeba;
-            border-radius: 10px;
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        .overlay, .scare {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .overlay {
+            background-color: rgba(245, 246, 250, 0.9);
+        }
+
+        .scare {
+            display: none;
+            z-index: 1;
+        }
+
+        .overlay-body {
+            text-align: center;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        p.overlay-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 16px;
+        }
+
+        p.overlay-description {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0 0 16px;
+        }
+
+        .overlay-button {
+            display: inline-flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 4px;
+            margin: 4px;
+            cursor: pointer;
             text-align: center;
         }
-        h1 {
-            color: #856404;
+
+        #accept-button {
+            background-color: rgb(132, 94, 194);
+            color: white;
         }
-        p {
-            font-size: 1.2rem;
-            color: #856404;
+
+        #decline-button {
+            color: rgb(132, 94, 194);
+            border: 2px solid rgb(132, 94, 194);
         }
-        .button-container {
-            margin-top: 30px;
+
+        .overlay-buttons-wrapper {
+            margin: 24px 0;
         }
-        .button-container .btn {
-            margin: 10px;
+
+        a.overlay-link {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: white;
+            margin-top: 16px;
+        }
+
+        video#video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .report-section {
+            margin: 24px 0;
+            font-size: 1rem;
+        }
+
+        .report-section a {
+            color: white;
+            font-weight: 500;
+        }
+
+        .copy-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            p.overlay-title {
+                font-size: 1.5rem;
+            }
+
+            p.overlay-description {
+                font-size: 0.875rem;
+            }
+
+            .overlay-button {
+                font-size: 0.875rem;
+            }
+        }
+
+        .styled {
+            border: 0;
+            line-height: 2.5;
+            padding: 0 20px;
+            font-size: 1rem;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 1px #000;
+            border-radius: 10px;
+            background-color: rgba(220, 0, 0, 1);
+            background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+            box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .styled:hover {
+            background-color: rgba(255, 0, 0, 1);
+        }
+
+        .styled:active {
+            box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>TỔNG HỢP NHỮNG VIDEO HAY HO CHỈ CÓ DUY NHẤT TRÊN WEBSITE NÀY</h1>
-        <script type="text/javascript">
-            atOptions = {
-                'key' : 'e233d81805ddf316cfbca9453fd6bb85',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.topcreativeformat.com/e233d81805ddf316cfbca9453fd6bb85/invoke.js"></script>
-        <div class="warning-container">
-            <h2>Cảnh Báo Quan Trọng</h2>
-            <p>Bạn nên lưu ý rằng tất cả các video này đều là video không dành cho người già, trẻ nhỏ, người có bệnh đặc biệt là bệnh liên quan đến tim mạch và đột quỵ.</p>
-        </div>
-       
-        <div class="button-container text-center">
-            <h2>BẠN NÊN XEM TỪ TRÊN XUỐNG DƯỚI ĐỂ CÓ TRẢI NGHIỆM TỐT NHẤT </h2>
+    <div id="overlay" class="overlay">
+        <div class="overlay-body">
+            <p class="overlay-title">THIS CONTENT IS SUITABLE FOR YOU</p>
+            <p>I WANT TO REMIND YOU</p>
+            <p class="overlay-description">Please note that this content is not suitable for the elderly, those with a <mark>weak heart, underlying medical conditions</mark>, or unstable mental health!</p>
+            <div class="overlay-buttons-wrapper">
+                <div id="accept-button" class="overlay-button">Open</div>
+                <div id="decline-button" class="overlay-button">Still curious? Tap here</div>
+            </div>
             <hr>
-            <h3>Vd nóng bỏng nhất lúc này </h3>
-            <a href="https://dilink.net/notes/bEIjj8B" class="btn btn-secondary">Truy cập ngay</a>
+            <div class="report-section">
+                <p><mark>YOU LIKE THE VIDEO YOU WATCHED?</mark></p>
+<div id="link-container" style="display: block; padding: 10px; color: black; border: 1px solid green; margin: 10px 0;">
+    <a href="https://facebook.com/xenvrnslol" target="_blank"><strong>Message me!</strong></a>
+</div>
+                <a href="#" target="_blank" class="hidden"></a>
+            </div>
             <hr>
-            <h3>Cái này không dành cho người yếu tim, đột quỵ </h3>
-            <a type="button" class="btn btn-primary" href='https://vietnamvd.github.io/sad.html'>Truy cập ngay </a>
-            <hr>
-          
-          
+            <div id="link-container" style="display: block; padding: 10px; border: 1px solid #000; margin: 10px 0;">
+    <a href="/sad" target="_blank"><strong>Send this to others!</strong></a>
+            </div>
+            <button id="copy-button" class="copy-button"><strong>Copy Weblink</strong></button>
         </div>
     </div>
-   
-    
 
-    <br> <hr>
-    <footer class="text-center">
-        <p> 2024 Vietnamvd. </p>
-         
-        <p><a href="https://vietnamvd.github.io/contact">Chính sách bảo mật</a> | <a href="https://vietnamvd.github.io/contact">Thông tin liên hệ</a></p>
-    <br>
-   
-<h1>Hù Ma Vui Nhộn</h1>
-<h2>Khám Phá Thế Giới Hù Ma Đầy Thú Vị</h2>
-<p>Trải nghiệm các trò chơi troll, meme và video clip hù ma hấp dẫn!</p>
-<div class="keyword">Hù Ma Ht Hồn</div>
-<div class="keyword">Hù Ma Game</div>
-<div class="keyword">Hù Ma Meme</div>
-<div class="keyword">Hù Ma Vui Nhộn</div>
-<div class="keyword"><a href="#">Link Hù Ma</a></div>
-<div class="keyword">Game Hù Ma</div>
-<div class="keyword">Video Hù Ma</div>
-<div class="keyword">Ảnh Hù Ma</div>
-<div class="keyword">Web Hù Ma</div>
-<div class="keyword">Clip Hù Ma</div>
-<div class="keyword">Game Troll Hù Ma</div>
-<div class="keyword">Trò Chơi Hù Ma</div>
-    </footer>
-    
-    
-      
-   
-        
-      <!-- Bootstrap JS and dependencies -->
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="scare">
+        <video id="video" class="video" src="lol.mp4" loop controls></video>
+    </div>
+
+    <script type="text/javascript">
+        // Copy to clipboard functionality
+        const copyButton = document.getElementById('copy-button');
+        const messageToCopy = "Check out this scary video! https://vietnamvd.github.io/sad.html"; // Message to be copied
+
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(messageToCopy).then(() => {
+                Swal.fire({
+                    title: 'Copied!',
+                    text: 'The message has been copied to your clipboard.',
+                    icon: 'success',
+                    confirmButtonText: 'Okay'
+                });
+            }).catch(err => {
+                console.error('Error copying text: ', err);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to copy the text. Please try again.',
+                    icon: 'error',
+                    confirmButtonText: 'Okay'
+                });
+            });
+        });
+
+        // Prevent back navigation
+        function preventBack() {
+            window.history.pushState(null, null, window.location.href);
+        }
+
+        window.onload = function() {
+            // Show welcome alert
+            Swal.fire({
+                title: 'HI THERE !',
+                text: 'This content may not be suitable for everyone.',
+                icon: 'info',
+                confirmButtonText: 'OK'
+            });
+
+            preventBack();
+
+            // Handle back navigation
+            window.onpopstate = function(event) {
+                preventBack();
+                Swal.fire({
+                    title: 'WARNING !',
+                    text: 'You cannot go back to the previous page',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                });
+                window.location.href = window.location.href;
+            };
+
+            // Handle page unload
+            window.onbeforeunload = function() {
+                preventBack();
+            };
+        };
+
+        const video = document.getElementById("video");
+        const overlay = document.getElementById("overlay");
+        const declineButton = document.getElementById("decline-button");
+        const acceptButton = document.getElementById("accept-button");
+
+        let hasClicked = false;
+
+        function buttonClick(event) {
+            event.preventDefault();
+            if (!hasClicked) hasClicked = true;
+            overlay.style.display = 'none'; // Hide overlay
+            document.querySelector('.scare').style.display = 'block'; // Show video
+            video.play().then(() => {
+                console.log('Video playback started');
+            }).catch((error) => {
+                console.error('Error attempting to play video:', error);
+            });
+            videoClick();
+        }
+
+        function videoClick(event) {
+            if (event) event.preventDefault();
+            const { documentElement } = document;
+            if (documentElement.requestFullscreen) documentElement.requestFullscreen();
+            else if (documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+            else if (documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+            else if (documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
+        }
+
+        acceptButton.addEventListener("click", buttonClick);
+        declineButton.addEventListener("click", buttonClick);
+        video.addEventListener("click", videoClick);
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GN35H5C0X9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-GN35H5C0X9');
+    </script>
 </body>
 </html>
